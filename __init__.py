@@ -2,11 +2,6 @@ from app.mac import mac, signals
 import os
 import random
 
-pokeDir = "/home/atte/Kuvat/pokemon-ilman-kontekstia"
-
-hiivattiVid = "https://www.youtube.com/watch?v=AlsacD_PMZ4"
-kissaVid = "https://www.youtube.com/watch?v=DtxEfQn7emI"
-valleVid = "https://www.youtube.com/watch?v=uWYeVbxBNII"
 
 try:
     sjokiFile = open("/home/atte/yowsapp-framework/modules/KyytiBOT/sjoki.txt", "r")
@@ -59,10 +54,6 @@ def handle(message):
         lista(message)
     elif message.command == "uusilista":
         uusilista(message)
-    elif message.command == "hiivatti":
-        hiivatti(message)
-    elif message.command == "kissa":
-       kissa(message)
     elif message.command == "vapaa":
         vapaa(message)
     elif message.command == "hyväbotti":
@@ -239,12 +230,6 @@ def uusilista(message):
     answer = "*Lista tyhjennetty, uudet ilmoittautumiset voi alkaa.*"
     mac.send_message(answer, message.conversation)
 
-def hiivatti(message):
-    mac.send_message(hiivattiVid, message.conversation)
-
-def kissa(message):
-    mac.send_message(kissaVid, message.conversation)
-
 def vapaa(message):
     mac.send_message("*MENISIT SINÄKI TÖI_HI*", message.conversation)
 
@@ -257,7 +242,6 @@ def lepo(message):
     emptyList("prisma")
     emptyList("kovero")
     emptyList("auto")
-    quit()
 
 
 ##############################################################
